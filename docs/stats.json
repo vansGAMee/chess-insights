@@ -1,0 +1,1310 @@
+{
+  "acpl": 407.2473813924831,
+  "acpl_by_phase": [
+    49.2397476340694,
+    355.45071295722255,
+    718.0830830830831
+  ],
+  "aggressive_opponent_winrate": 59.55882352941177,
+  "avg_first_mistake_move": 8.80281690140845,
+  "avg_opponent_rating": 526.2827586206896,
+  "best": 161,
+  "blunder_in_winning_rate": 16.164658634538153,
+  "blunders": 161,
+  "brilliant": 160,
+  "captures_by_piece": [
+    [
+      75,
+      82
+    ],
+    [
+      81,
+      399
+    ],
+    [
+      82,
+      219
+    ],
+    [
+      66,
+      278
+    ],
+    [
+      78,
+      368
+    ],
+    [
+      80,
+      364
+    ]
+  ],
+  "castles_kingside": 119,
+  "castles_queenside": 19,
+  "checks_given": 605,
+  "day_of_week_stats": {
+    "Fri": {
+      "games": 16,
+      "winrate": 56.25
+    },
+    "Mon": {
+      "games": 37,
+      "winrate": 67.56756756756756
+    },
+    "Sat": {
+      "games": 27,
+      "winrate": 40.74074074074074
+    },
+    "Sun": {
+      "games": 10,
+      "winrate": 80.0
+    },
+    "Thu": {
+      "games": 20,
+      "winrate": 45.0
+    },
+    "Tue": {
+      "games": 15,
+      "winrate": 40.0
+    },
+    "Wed": {
+      "games": 20,
+      "winrate": 70.0
+    }
+  },
+  "draws": 1,
+  "early_mates": 3,
+  "early_session_winrate": 58.333333333333336,
+  "endgame_percentage": 35.172413793103445,
+  "endgame_winrate": 60.78431372549019,
+  "gambit_winrate": 59.55882352941177,
+  "great": 69,
+  "hour_stats": {
+    "10": {
+      "games": 16,
+      "winrate": 50.0
+    },
+    "11": {
+      "games": 11,
+      "winrate": 81.81818181818181
+    },
+    "12": {
+      "games": 2,
+      "winrate": 50.0
+    },
+    "13": {
+      "games": 5,
+      "winrate": 60.0
+    },
+    "14": {
+      "games": 7,
+      "winrate": 85.71428571428571
+    },
+    "15": {
+      "games": 2,
+      "winrate": 100.0
+    },
+    "16": {
+      "games": 7,
+      "winrate": 57.142857142857146
+    },
+    "17": {
+      "games": 5,
+      "winrate": 40.0
+    },
+    "18": {
+      "games": 6,
+      "winrate": 83.33333333333333
+    },
+    "19": {
+      "games": 3,
+      "winrate": 0.0
+    },
+    "23": {
+      "games": 2,
+      "winrate": 100.0
+    },
+    "3": {
+      "games": 8,
+      "winrate": 12.5
+    },
+    "4": {
+      "games": 10,
+      "winrate": 40.0
+    },
+    "5": {
+      "games": 7,
+      "winrate": 28.571428571428573
+    },
+    "6": {
+      "games": 13,
+      "winrate": 76.92307692307692
+    },
+    "7": {
+      "games": 25,
+      "winrate": 48.0
+    },
+    "8": {
+      "games": 11,
+      "winrate": 63.63636363636363
+    },
+    "9": {
+      "games": 5,
+      "winrate": 80.0
+    }
+  },
+  "late_session_winrate": 50.0,
+  "longest_loss_streak": 7,
+  "longest_win_streak": 7,
+  "loss_checkmate": 16,
+  "loss_index_avg": 11.163176601715914,
+  "loss_index_per_game": [
+    4.592050813371697,
+    13.691660910449292,
+    11.997703647153017,
+    16.110999719909938,
+    34.18453461567527,
+    3.628433568604218,
+    17.263560372574183,
+    14.273704329736455,
+    3.7153256209244554,
+    4.658485539498599,
+    0.0,
+    3.8385201861271443,
+    19.33713544366176,
+    23.34267139030707,
+    20.051096758743224,
+    16.435379351728493,
+    22.135251574486787,
+    17.404021170717748,
+    6.291782636577954,
+    25.693118973321884,
+    16.2138452633582,
+    3.207655930714533,
+    1.175449489290536,
+    3.3715109948803113,
+    6.082287461434344,
+    5.562873754411793,
+    18.660293105828547,
+    6.4731972788480014,
+    1.0783141185185974,
+    19.645978887634303,
+    6.528017291363797,
+    22.09282431147401,
+    3.961988281800146,
+    0.5395914924586132,
+    16.03367051338614,
+    18.325545186708613,
+    9.171723633216795,
+    9.506755280960908,
+    19.364465152836875,
+    21.981078418631025,
+    4.945064436433689,
+    8.105691841799656,
+    8.589820588424601,
+    8.510695522048263,
+    13.385235841375684,
+    45.13061826577947,
+    0.7211892800587982,
+    5.719625783080614,
+    8.905903094643767,
+    13.193636032597944,
+    17.027745370589727,
+    16.367412400766405,
+    0.8910023095726216,
+    8.767544006393818,
+    1.0803078964915613,
+    26.125174298339054,
+    3.191531560422108,
+    9.189935254532426,
+    11.73058387319415,
+    19.15927712155419,
+    9.27462915914245,
+    13.6255012160342,
+    15.370340636916069,
+    6.684630450452725,
+    14.026480267863354,
+    4.989920424524665,
+    11.976421695645548,
+    16.515763423595303,
+    9.620977556947542,
+    10.454267980267385,
+    15.617722395028593,
+    2.7103000422811703,
+    15.730393089380545,
+    0.2596768731795873,
+    16.527028675409777,
+    10.985394035498587,
+    21.724634138795416,
+    8.392552553226485,
+    3.8700307740326916,
+    16.381839044632844,
+    13.592612296823154,
+    15.699849736676358,
+    14.101302357546874,
+    16.733322755250885,
+    0.5931886291388121,
+    8.931837743846035,
+    11.551755803011176,
+    18.226365249415586,
+    3.2114764908494644,
+    8.7940652033905,
+    4.046968221226761,
+    0.7235394081298363,
+    11.322202150981187,
+    15.507594686980655,
+    15.290021931572017,
+    2.839248992194956,
+    19.71191437599194,
+    7.449403113142542,
+    8.703861879725846,
+    9.095622900007706,
+    3.5153112436297893,
+    14.674268218540426,
+    5.430838877240711,
+    14.370677504107142,
+    14.839706019630366,
+    18.404743337506915,
+    5.286587838007254,
+    1.188539276451025,
+    17.340938451034884,
+    13.893236341067237,
+    0.7188799165046111,
+    16.55443890210906,
+    3.7524102028354176,
+    23.59090799843502,
+    7.572965495044801,
+    0.9003882937572483,
+    14.911816243149861,
+    16.396675649915444,
+    4.779538030745414,
+    18.251283922077384,
+    1.0803078964915613,
+    7.233702559868785,
+    1.8395247514849424,
+    1.0803078964915613,
+    32.91374034361419,
+    1.8014971765503596,
+    17.189106877255966,
+    7.524134268219187,
+    3.7881524814046497
+  ],
+  "loss_resign": 39,
+  "loss_timeout": 7,
+  "losses": 62,
+  "mating_piece": {
+    "B": 1,
+    "P": 2,
+    "Q": 26,
+    "R": 7
+  },
+  "mistakes": 278,
+  "openings": [
+    {
+      "count": 14,
+      "eco": "A00",
+      "winrate": 42.857142857142854
+    },
+    {
+      "count": 13,
+      "eco": "C50",
+      "winrate": 53.84615384615385
+    },
+    {
+      "count": 11,
+      "eco": "C20",
+      "winrate": 45.45454545454545
+    },
+    {
+      "count": 8,
+      "eco": "C00",
+      "winrate": 62.5
+    },
+    {
+      "count": 7,
+      "eco": "C40",
+      "winrate": 57.142857142857146
+    },
+    {
+      "count": 7,
+      "eco": "B01",
+      "winrate": 100.0
+    },
+    {
+      "count": 6,
+      "eco": "C42",
+      "winrate": 66.66666666666667
+    },
+    {
+      "count": 6,
+      "eco": "A04",
+      "winrate": 66.66666666666667
+    },
+    {
+      "count": 4,
+      "eco": "C41",
+      "winrate": 75.0
+    },
+    {
+      "count": 4,
+      "eco": "B00",
+      "winrate": 50.0
+    },
+    {
+      "count": 4,
+      "eco": "C24",
+      "winrate": 75.0
+    },
+    {
+      "count": 4,
+      "eco": "C47",
+      "winrate": 50.0
+    },
+    {
+      "count": 4,
+      "eco": "C55",
+      "winrate": 75.0
+    },
+    {
+      "count": 3,
+      "eco": "C53",
+      "winrate": 100.0
+    },
+    {
+      "count": 3,
+      "eco": "C23",
+      "winrate": 0.0
+    },
+    {
+      "count": 2,
+      "eco": "B10",
+      "winrate": 50.0
+    },
+    {
+      "count": 2,
+      "eco": "B12",
+      "winrate": 50.0
+    },
+    {
+      "count": 2,
+      "eco": "C22",
+      "winrate": 100.0
+    },
+    {
+      "count": 2,
+      "eco": "A45",
+      "winrate": 0.0
+    },
+    {
+      "count": 2,
+      "eco": "C25",
+      "winrate": 100.0
+    },
+    {
+      "count": 2,
+      "eco": "D00",
+      "winrate": 100.0
+    },
+    {
+      "count": 2,
+      "eco": "B33",
+      "winrate": 50.0
+    },
+    {
+      "count": 2,
+      "eco": "B02",
+      "winrate": 50.0
+    },
+    {
+      "count": 2,
+      "eco": "B07",
+      "winrate": 50.0
+    },
+    {
+      "count": 2,
+      "eco": "A40",
+      "winrate": 100.0
+    },
+    {
+      "count": 2,
+      "eco": "C45",
+      "winrate": 0.0
+    },
+    {
+      "count": 2,
+      "eco": "B40",
+      "winrate": 50.0
+    },
+    {
+      "count": 2,
+      "eco": "C44",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "B27",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "B28",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "A20",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "A02",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "A13",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "B21",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "A01",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "C02",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "B20",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "B30",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "C68",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "B13",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "A43",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "B06",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "C26",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "B22",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "D06",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "D20",
+      "winrate": 0.0
+    },
+    {
+      "count": 1,
+      "eco": "C21",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "C57",
+      "winrate": 100.0
+    },
+    {
+      "count": 1,
+      "eco": "D02",
+      "winrate": 0.0
+    }
+  ],
+  "piece_moves_percent": {
+    "B": 14.867924528301886,
+    "K": 12.211320754716981,
+    "N": 19.366037735849055,
+    "P": 26.369811320754717,
+    "Q": 16.030188679245285,
+    "R": 11.154716981132076
+  },
+  "promotion_to": [
+    [
+      78,
+      1
+    ],
+    [
+      66,
+      0
+    ],
+    [
+      82,
+      0
+    ],
+    [
+      81,
+      9
+    ]
+  ],
+  "promotions": 10,
+  "rating_progress": [
+    {
+      "month": "2024-01",
+      "rating": 547.0
+    },
+    {
+      "month": "2024-03",
+      "rating": 311.0
+    },
+    {
+      "month": "2024-08",
+      "rating": 285.5
+    },
+    {
+      "month": "2024-09",
+      "rating": 486.15
+    },
+    {
+      "month": "2024-12",
+      "rating": 447.89473684210526
+    },
+    {
+      "month": "2025-01",
+      "rating": 422.0
+    },
+    {
+      "month": "2025-02",
+      "rating": 470.0
+    },
+    {
+      "month": "2025-04",
+      "rating": 363.5
+    },
+    {
+      "month": "2025-07",
+      "rating": 368.0
+    },
+    {
+      "month": "2025-08",
+      "rating": 428.25
+    },
+    {
+      "month": "2026-05",
+      "rating": 334.5
+    },
+    {
+      "month": "2026-06",
+      "rating": 551.0
+    },
+    {
+      "month": "2026-07",
+      "rating": 706.0816326530612
+    }
+  ],
+  "saved_draws": 0,
+  "tilt_games": 62,
+  "tilt_winrate": 53.225806451612904,
+  "top_rivals": [
+    {
+      "games": 4,
+      "opponent": "arturgrig228",
+      "winrate": 75.0
+    },
+    {
+      "games": 4,
+      "opponent": "BigSmoke_Tr",
+      "winrate": 50.0
+    },
+    {
+      "games": 2,
+      "opponent": "Ombir_676",
+      "winrate": 100.0
+    },
+    {
+      "games": 2,
+      "opponent": "Radu_Dragos",
+      "winrate": 0.0
+    },
+    {
+      "games": 2,
+      "opponent": "sppiderking",
+      "winrate": 50.0
+    },
+    {
+      "games": 2,
+      "opponent": "jollybunny1",
+      "winrate": 100.0
+    },
+    {
+      "games": 2,
+      "opponent": "Mavya987",
+      "winrate": 50.0
+    },
+    {
+      "games": 1,
+      "opponent": "mrb9999",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "HollywoodPark88888",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "imazighen_06",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Ubhek",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "haqmal009",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "vaiicita",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "NAVEEN016",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "KWP6",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "skoroplet",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "asepserenteng",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "irfans1967",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "vinitkumar8523",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Adolf_111",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Ichigo_MK",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Utsu08",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "spideyboy25",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Godz2308",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "virat44453",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Sersch7",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "ludo9872",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "SamWakko",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "r2896",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "itsspk",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "anthomu",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "LITTLEBRICK67",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "pipandsnoop",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "puskarmagar01",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "KRISHNAPATHAK23",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Pushkin8965",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "ziadkall1234565424",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "givertmyrdon",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Chalaros",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "kingneversmiles",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "bottle444",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "ivanarcos02",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Soharu77",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "kikold",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "mr_JAPABOSS",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "BREKX4AK",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "ravioli12345678",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Melonmeh",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Denes555",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "REN1O",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "jonisan9",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Magomed4437",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "x-7978655022",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "hotdawgketchup",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "justtoboast",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "nawabistar",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Sdragoss",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Annappa846",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "IAsilva13",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "GeliPfl",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "pedrobegali",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Aqua0P",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "ChilloMain",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Stanners0912",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "speedykid311",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "joli-baumenkild",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "gvgecr",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "KirunDjl",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "N0gB4d",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Ferz88888AE",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Arnau_N",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "barbisa1234",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "paxalo",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Sandile002",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Ryoowadidaw",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "boryskora",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "adityawarade",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Keher17",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Khoiron87",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "BAratexor",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Billrothh",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "solacium42",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "corection_actual",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "AyaanShaikh_000",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "tarpaci",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "chessss1O9",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "sean07302",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "amlanbengaltiger",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Hrithik-R24680",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "meucheler",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Shaheedhvk18",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "vivaLaFifa231",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Christian_1921",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Star4420",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Terence240612",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "ChioO_RioO",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "iajoh",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "chesswing7",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "emine_altintepe61",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Fitzlucky",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Shima_Hikaru",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "gasparov1andonly",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "nadez04",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Kaungnaywin",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "afzalvazeez9969",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Adarsh_thakur1",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Artyom_Generalov",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "youngdanso",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "ganzrawalee",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "local-magnus",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "salibyco",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "EyobBerhe",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "YamaTheh",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "hastiika",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Warrion3012",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Ebehhoki",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "piddidi",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Amar_144",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Dboyzzz",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Peterpuli",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "saro7654",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Danielito-castro",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "ravansuoer",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "ashhh_06",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Eugeneleeegg",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "lickymysticky",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "shresth2001",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "BobskiO",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Alvarito_jrg",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "beaumcd65",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "ImYZY",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "welato12",
+      "winrate": 100.0
+    },
+    {
+      "games": 1,
+      "opponent": "Mad-Max2305",
+      "winrate": 0.0
+    },
+    {
+      "games": 1,
+      "opponent": "Decatour",
+      "winrate": 0.0
+    }
+  ],
+  "total_games": 145,
+  "vs_stronger_winrate": 12.5,
+  "vs_weaker_winrate": 94.44444444444444,
+  "win_black": 40,
+  "win_white": 42,
+  "wins": 82
+}

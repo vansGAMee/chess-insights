@@ -1,0 +1,4 @@
+aiohttp
+chess
+tqdm
+pybind11

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>♟️ Полная шахматная аналитика</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      padding: 2rem;
+    }
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .glass:hover { transform: translateY(-4px); }
+    h1 { text-align: center; font-size: 2.5rem; margin-bottom: 2rem; text-shadow: 0 0 20px rgba(255,255,255,0.3); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+    canvas { max-height: 300px; }
+    .metric { display: flex; justify-content: space-between; margin: 0.5rem 0; }
+    .metric-value { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+    th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .hint { font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>♟️ Моя шахматная статистика (полная версия)</h1>
+  <div class="grid" id="dashboard"></div>
+
+  <script>
+    const FIGURE_NAMES = {'P':'Пешка','N':'Конь','B':'Слон','R':'Ладья','Q':'Ферзь','K':'Король'};
+    const DOW_RU = {'Sun':'Вс','Mon':'Пн','Tue':'Вт','Wed':'Ср','Thu':'Чт','Fri':'Пт','Sat':'Сб'};
+    const ECO_NAMES = {
+      "A00":"Неправильное начало", "A01":"Дебют Ларсена", "A04":"Дебют Рети", "A10":"Английское начало",
+      "A40":"Ферзевый пешечный дебют", "A45":"Индийская защита", "A46":"Индийская защита (2.Kf3)",
+      "A48":"Индийская защита (3.Bg5)", "A80":"Голландская защита", "B00":"Дебют Нимцовича",
+      "B01":"Скандинавская защита", "B06":"Защита Робача", "B07":"Защита Пирца-Уфимцева",
+      "B12":"Защита Каро-Канн", "B20":"Сицилианская защита", "B30":"Сицилианская защита (вариант Найдорфа)",
+      "B40":"Сицилианская защита (2...e6)", "B50":"Сицилианская защита (2...d6)", "C00":"Французская защита",
+      "C01":"Французская защита (2.d4 d5)", "C02":"Французская защита (3.e5)", "C15":"Французская защита (3.Nc3)",
+      "C20":"Дебют королевской пешки", "C25":"Венская партия", "C30":"Королевский гамбит",
+      "C34":"Королевский гамбит (3.Nf3)", "C40":"Дебют четырёх коней", "C41":"Защита Филидора",
+      "C42":"Русская партия", "C44":"Шотландская партия", "C45":"Шотландская партия (вариант Мизеса)",
+      "C46":"Дебют трёх коней", "C50":"Итальянская партия", "C51":"Гамбит Эванса", "C54":"Итальянская партия (Giuoco Piano)",
+      "C55":"Защита двух коней", "C60":"Испанская партия", "C65":"Испанская партия (Берлинская защита)",
+      "C68":"Испанская партия (Обменный вариант)", "C80":"Испанская партия (Открытый вариант)",
+      "D00":"Ферзевый гамбит", "D02":"Ферзевый гамбит (2.Nf3)", "D06":"Ферзевый гамбит (2.c4)",
+      "D10":"Славянская защита", "D15":"Славянская защита (4.Nc3)", "D20":"Принятый ферзевый гамбит",
+      "D30":"Ферзевый гамбит (3.Nf3)", "D35":"Ферзевый гамбит (3.Nc3)", "D37":"Ферзевый гамбит (5.e3)",
+      "D45":"Полуславянская защита", "E00":"Каталонское начало", "E10":"Индийская защита (3.Nf3)",
+      "E12":"Индийская защита (4.a3)", "E20":"Защита Нимцовича", "E60":"Староиндийская защита",
+      "E90":"Староиндийская защита (классическая)"
+    };
+    function openingName(eco) { return ECO_NAMES[eco] || eco; }
+
+    fetch('stats.json')
+      .then(r => r.json())
+      .then(s => {
+        const dash = document.getElementById('dashboard');
+        dash.innerHTML += `
+          <div class="glass">
+            <h3>📊 Общий результат</h3>
+            <canvas id="chart1"></canvas>
+            <div class="metric"><span>Всего игр:</span><span class="metric-value">${s.total_games}</span></div>
+            <div class="metric"><span>Побед / Поражений / Ничьих:</span><span>${s.wins} / ${s.losses} / ${s.draws}</span></div>
+            <div class="metric"><span>Побед белыми / чёрными:</span><span>${s.win_white} / ${s.win_black}</span></div>
+            <div class="metric"><span>Лучшая серия побед:</span><span>${s.longest_win_streak}</span></div>
+            <div class="metric"><span>Худшая серия поражений:</span><span>${s.longest_loss_streak}</span></div>
+          </div>
+          <div class="glass">
+            <h3>📈 Рейтинг по месяцам</h3>
+            <canvas id="chart2"></canvas>
+            <div class="metric"><span>Средний рейтинг соперников:</span><span>${s.avg_opponent_rating.toFixed(0)}</span></div>
+          </div>
+          <div class="glass">
+            <h3>⚡ Качество ходов</h3>
+            <canvas id="chart3"></canvas>
+            <div class="metric"><span>Brilliant / Great / Best:</span><span>${s.brilliant} / ${s.great} / ${s.best}</span></div>
+            <div class="metric"><span>Mistakes / Blunders:</span><span>${s.mistakes} / ${s.blunders}</span></div>
+            <div class="metric"><span>ACPL:</span><span>${s.acpl.toFixed(1)}</span></div>
+            <div class="metric"><span>ACPL (дебют/миттельшпиль/эндшпиль):</span><span>${s.acpl_by_phase[0]?.toFixed(1) || 0} / ${s.acpl_by_phase[1]?.toFixed(1) || 0} / ${s.acpl_by_phase[2]?.toFixed(1) || 0}</span></div>
+            <div class="metric"><span>Средний ход первой ошибки:</span><span>${s.avg_first_mistake_move.toFixed(1)}</span></div>
+          </div>
+          <div class="glass">
+            <h3>♟️ Ходы фигурами (%)</h3>
+            <canvas id="chart4"></canvas>
+          </div>
+          <div class="glass">
+            <h3>🎯 Взятия фигурами</h3>
+            <canvas id="chart5"></canvas>
+          </div>
+          <div class="glass">
+            <h3>🏰 Особые ходы</h3>
+            <div class="metric"><span>Рокировки (короткая / длинная):</span><span>${s.castles_kingside} / ${s.castles_queenside}</span></div>
+            <div class="metric"><span>Превращения пешки (Ф/Л/С/К):</span><span>${s.promotion_to?.Q||0} / ${s.promotion_to?.R||0} / ${s.promotion_to?.B||0} / ${s.promotion_to?.N||0}</span></div>
+            <div class="metric"><span>Всего шахов поставлено:</span><span>${s.checks_given}</span></div>
+          </div>
+          <div class="glass">
+            <h3>💔 Причины поражений</h3>
+            <canvas id="chart6"></canvas>
+            <div class="metric"><span>По времени / Мат / Сдача:</span><span>${s.loss_timeout} / ${s.loss_checkmate} / ${s.loss_resign}</span></div>
+          </div>
+          <div class="glass">
+            <h3>⏰ Время суток (winrate %)</h3>
+            <canvas id="chart7"></canvas>
+          </div>
+          <div class="glass">
+            <h3>📅 Дни недели (winrate %)</h3>
+            <canvas id="chart8"></canvas>
+          </div>
+          <div class="glass">
+            <h3>📚 Дебюты (первые 10)</h3>
+            <table id="openings_table"></table>
+          </div>
+          <div class="glass">
+            <h3>🥇 Топ-10 соперников</h3>
+            <table id="rivals_table"></table>
+          </div>
+          <div class="glass">
+            <h3>👑 Матующие фигуры</h3>
+            <canvas id="chart9"></canvas>
+          </div>
+          <div class="glass">
+            <h3>🧪 Особые показатели</h3>
+            <div class="metric"><span>Эндшпиль (% от всех игр):</span><span>${s.endgame_percentage.toFixed(1)}%</span></div>
+            <div class="metric"><span>Винрейт в эндшпиле:</span><span>${s.endgame_winrate.toFixed(1)}%</span></div>
+            <div class="metric"><span>Гамбиты (winrate):</span><span>${s.gambit_winrate.toFixed(1)}%</span></div>
+            <div class="metric"><span>Детские маты:</span><span>${s.early_mates}</span></div>
+            <div class="metric"><span>Спасённые ничьи (из -200cp):</span><span>${s.saved_draws}</span></div>
+            <div class="metric"><span>Против сильнее (+100):</span><span>${s.vs_stronger_winrate.toFixed(1)}%</span></div>
+            <div class="metric"><span>Против слабее (-100):</span><span>${s.vs_weaker_winrate.toFixed(1)}%</span></div>
+          </div>
+          <div class="glass">
+            <h3>🧠 Психология и серии</h3>
+            <div class="metric"><span>Винрейт сразу после поражения:</span><span>${s.tilt_winrate.toFixed(1)}% (${s.tilt_games} игр)</span></div>
+            <div class="metric"><span>Винрейт в первых 3 играх дня:</span><span>${s.early_session_winrate.toFixed(1)}%</span></div>
+            <div class="metric"><span>Винрейт после 10 игр в день:</span><span>${s.late_session_winrate.toFixed(1)}%</span></div>
+            <div class="metric"><span>Зевки в доминирующих позициях (>300cp):</span><span>${s.blunder_in_winning_rate.toFixed(1)}%</span></div>
+            <div class="metric"><span>Против агрессивных соперников:</span><span>${s.aggressive_opponent_winrate.toFixed(1)}%</span></div>
+          </div>
+          <div class="glass">
+            <h3>🔥 MQ-Chess (Loss Index)</h3>
+            <div class="metric"><span>Ваш Loss Index:</span><span class="metric-value" id="mqValue">${s.loss_index_avg?.toFixed(2) || '—'}%</span></div>
+            <div class="metric"><span>Уровень:</span><span id="mqLevel"></span></div>
+            <div class="hint">Шкала: GM <2% | IM 2-4% | CM 4-7% | Club 7-12% | Beginner 12-20% | >20% — есть над чем работать</div>
+          </div>
+        `;
+
+        // Графики
+        new Chart(document.getElementById('chart1'), {
+          type: 'doughnut',
+          data: { labels: ['Победы','Поражения','Ничьи'], datasets: [{ data: [s.wins, s.losses, s.draws], backgroundColor: ['#2ecc71','#e74c3c','#f1c40f'] }] }
+        });
+        const months = s.rating_progress.map(p => p.month);
+        const ratings = s.rating_progress.map(p => p.rating);
+        new Chart(document.getElementById('chart2'), {
+          type: 'line',
+          data: { labels: months, datasets: [{ label: 'Рейтинг', data: ratings, borderColor: '#2ecc71', tension: 0.2 }] }
+        });
+        new Chart(document.getElementById('chart3'), {
+          type: 'bar',
+          data: { labels: ['Brilliant','Great','Best','Mistake','Blunder'], datasets: [{ data: [s.brilliant, s.great, s.best, s.mistakes, s.blunders], backgroundColor: ['gold','silver','#3498db','orange','#e74c3c'] }] }
+        });
+        const pieceLabels = Object.keys(s.piece_moves_percent).map(p => FIGURE_NAMES[p] || p);
+        const pieceData = Object.values(s.piece_moves_percent);
+        new Chart(document.getElementById('chart4'), {
+          type: 'pie',
+          data: { labels: pieceLabels, datasets: [{ data: pieceData, backgroundColor: ['#e74c3c','#3498db','#2ecc71','#f1c40f','#9b59b6','#1abc9c'] }] }
+        });
+        const capLabels = Object.keys(s.captures_by_piece).map(p => FIGURE_NAMES[p] || p);
+        const capData = Object.values(s.captures_by_piece);
+        new Chart(document.getElementById('chart5'), {
+          type: 'bar',
+          data: { labels: capLabels, datasets: [{ data: capData, backgroundColor: '#e67e22' }] }
+        });
+        new Chart(document.getElementById('chart6'), {
+          type: 'pie',
+          data: { labels: ['Таймаут','Мат','Сдача'], datasets: [{ data: [s.loss_timeout, s.loss_checkmate, s.loss_resign], backgroundColor: ['#f39c12','#c0392b','#7f8c8d'] }] }
+        });
+        const hours = Object.keys(s.hour_stats).sort((a,b)=>a-b);
+        new Chart(document.getElementById('chart7'), {
+          type: 'line',
+          data: { labels: hours.map(h => `${h}:00`), datasets: [{ label: 'Winrate %', data: hours.map(h => s.hour_stats[h].winrate), borderColor: '#3498db', tension: 0.3 }] },
+          options: { scales: { y: { min:0, max:100 } } }
+        });
+        const dowOrder = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        const dowLabels = dowOrder.map(d => DOW_RU[d] || d);
+        const dowWR = dowOrder.map(d => s.day_of_week_stats[d]?.winrate || 0);
+        new Chart(document.getElementById('chart8'), {
+          type: 'bar',
+          data: { labels: dowLabels, datasets: [{ data: dowWR, backgroundColor: '#9b59b6' }] },
+          options: { scales: { y: { min:0, max:100 } } }
+        });
+        const mateLabels = Object.keys(s.mating_piece).map(p => FIGURE_NAMES[p] || p);
+        const mateData = Object.values(s.mating_piece);
+        new Chart(document.getElementById('chart9'), {
+          type: 'bar',
+          data: { labels: mateLabels, datasets: [{ data: mateData, backgroundColor: '#e91e63' }] }
+        });
+
+        // Таблицы
+        let t1 = '<tr><th>Дебют</th><th>Игр</th><th>Winrate</th></tr>';
+        s.openings.slice(0,10).forEach(o => t1 += `<tr><td>${openingName(o.eco)}</td><td>${o.count}</td><td>${o.winrate.toFixed(1)}%</td></tr>`);
+        document.getElementById('openings_table').innerHTML = t1;
+        let t2 = '<tr><th>Соперник</th><th>Игр</th><th>Winrate</th></tr>';
+        s.top_rivals.slice(0,10).forEach(r => t2 += `<tr><td>${r.opponent}</td><td>${r.games}</td><td>${r.winrate.toFixed(1)}%</td></tr>`);
+        document.getElementById('rivals_table').innerHTML = t2;
+
+        // Уровень MQ
+        const li = s.loss_index_avg;
+        let level = '';
+        if (li === undefined || li === null) level = 'Нет данных (запустите compute_mq.py)';
+        else if (li < 2) level = '👑 Гроссмейстер';
+        else if (li < 4) level = '🥇 Международный мастер';
+        else if (li < 7) level = '🥈 Кандидат в мастера';
+        else if (li < 12) level = '🎯 Клубный игрок';
+        else if (li < 20) level = '📘 Начинающий';
+        else level = '💪 Есть куда расти';
+        document.getElementById('mqLevel').textContent = level;
+      });
+  </script>
+
+  <footer style="text-align:center; margin-top: 3rem; opacity: 0.7; font-size: 0.9rem;">
+  <p>♟️ Проект создан <strong>Ivan</strong> | 
+  <a href="https://github.com/vansGAMee/MQ-Chess.git" target="_blank" style="color: #3498db;">GitHub</a> | 
+  <a href="https://github.com/vansGAMee/MQ-Chess.git" target="_blank" style="color: #3498db;">Chess.com</a></p>
+  <p>Авторская метрика: <strong>MQ-Chess (Loss Index)</strong></p>
+</footer>
+</body>
+</html>
