@@ -1,28 +1,43 @@
 name: Daily Chess Stats
+
 on:
   schedule:
-    - cron: '0 6 * * *'
-  workflow_dispatch:
+    - cron: '0 6 * * *'   # каждый день в 6 утра UTC
+  workflow_dispatch:       # ручной запуск
+
+permissions:
+  contents: write          # разрешаем коммиты в репозиторий
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Install system deps
-        run: sudo apt-get update && sudo apt-get install -y stockfish libpython3-dev pybind11-dev nlohmann-json3-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y stockfish libpython3-dev pybind11-dev nlohmann-json3-dev
+
       - name: Install Python deps
         run: pip install -r analyzer/requirements.txt
+
       - name: Build C++ module
-        run: cd analyzer && python setup.py build_ext --inplace && cd ..
+        run: |
+          cd analyzer
+          python setup.py build_ext --inplace
+          cd ..
+
       - name: Fetch & analyze
         run: python analyzer/fetch_and_analyze.py
-      - name: Commit stats
+
+      - name: Commit updated stats
         run: |
           git config user.name github-actions
-          git config user.email actions@github.com
+          git config user.email github-actions@github.com
           git add docs/stats.json cache/analyzed.json
           git diff --staged --quiet || (git commit -m "📈 Auto-update stats" && git push)
