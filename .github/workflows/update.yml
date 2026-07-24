@@ -2,11 +2,11 @@ name: Daily Chess Stats
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # каждый день в 6 утра UTC
-  workflow_dispatch:       # ручной запуск
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: write          # разрешаем коммиты в репозиторий
+  contents: write
 
 jobs:
   update:
@@ -22,6 +22,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y stockfish libpython3-dev pybind11-dev nlohmann-json3-dev
+          # Создаём симлинк, чтобы Python нашёл бинарник по привычному пути
+          sudo ln -sf /usr/games/stockfish /usr/bin/stockfish
 
       - name: Install Python deps
         run: pip install -r analyzer/requirements.txt
