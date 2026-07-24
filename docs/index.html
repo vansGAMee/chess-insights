@@ -64,7 +64,7 @@
     };
     function openingName(eco) { return ECO_NAMES[eco] || eco; }
 
-    fetch('stats.json')
+    fetch('stats.json?t=' + Date.now())
       .then(r => r.json())
       .then(s => {
         const dash = document.getElementById('dashboard');
