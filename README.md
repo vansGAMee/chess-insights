@@ -1,6 +1,6 @@
 # ♟️ Chess Insights — бесплатный аналог Diamond аналитики
 
-**Python + C++ + Stockfish** → 35+ метрик на красивом дашборде.  
+**Python + C++ + Stockfish** → 10+ метрик на красивом дашборде.  
 Хостинг на GitHub Pages, автообновление через Actions.
 
 ## Как запустить локально (Arch/Ubuntu)
