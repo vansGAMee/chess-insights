@@ -1,27 +1,26 @@
-# ♟️ Chess Insights — бесплатный аналог Diamond аналитики
+# ♟️ Chess Insights — Free alternative to Diamond analytics
 
-**Python + C++ + Stockfish** → 10+ метрик на красивом дашборде.  
-Хостинг на GitHub Pages, автообновление через Actions.
+**Python + C++ + Stockfish** → 10+ metrics on a beautiful dashboard.  
+Hosted on GitHub Pages, auto‑updated via Actions.
 
-## Как запустить локально (Arch/Ubuntu)
-1. Установите Stockfish: `sudo pacman -S stockfish` или `sudo apt install stockfish`
+## How to run locally (Arch/Ubuntu)
+1. Install Stockfish: `sudo pacman -S stockfish` or `sudo apt install stockfish`
 2. `pip install -r analyzer/requirements.txt`
-3. В `fetch_and_analyze.py` замените `your_chesscom_username` на свой ник.
-4. В `stats_cpp.cpp` также замените ник в строке `static std::string USERNAME = ...`
-5. Соберите C++ модуль: `cd analyzer && python setup.py build_ext --inplace`
-6. Запустите: `python analyzer/fetch_and_analyze.py`
-7. Откройте `docs/index.html` в браузере.
+3. In `fetch_and_analyze.py`, replace `your_chesscom_username` with your own nickname.
+4. In `stats_cpp.cpp`, also replace the nickname in the line `static std::string USERNAME = ...`
+5. Build the C++ module: `cd analyzer && python setup.py build_ext --inplace`
+6. Run: `python analyzer/fetch_and_analyze.py`
+7. Open `docs/index.html` in your browser.
 
-## Автодеплой
-- Включите GitHub Pages для папки `/docs` в настройках репозитория.
-- GitHub Actions будет ежедневно обновлять статистику.
+## Autodeploy
+- Enable GitHub Pages for the `/docs` folder in your repository settings.
+- GitHub Actions will update the statistics daily.
 
-
-## 👨‍💻 Автор
+## 👨‍💻 Author
 **Ivan (IvanKulkin)**  
-Разработчик и автор проекта.  
-- GitHub: [@vansGAMee](https://github.com/vansGAMee/MQ-Chess.git)   
+Developer and creator of the project.  
+- GitHub: [@vansGAMee](https://github.com/vansGAMee/MQ-Chess.git)
 
-### 🧠 Авторская метрика MQ-Chess
-Loss Index (MQ-Chess) — оригинальная метрика точности игры, разработанная мной в 2024 году.  
-Подробнее в [репозитории](https://github.com/vansGAMee/MQ-Chess.git) (https://github.com/vansGAMee/MQ-Chess.git).
+### 🧠 Original MQ-Chess metric
+Loss Index (MQ-Chess) — an original accuracy metric developed by me in 2024.  
+Learn more in the [repository](https://github.com/vansGAMee/MQ-Chess.git).
