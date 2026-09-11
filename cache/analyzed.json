@@ -48434,5 +48434,51 @@
     "material_after_10": 32,
     "development_move": 0,
     "early_mate": false
+  },
+  "https://www.chess.com/game/live/174271317174": {
+    "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.09.10\"]\n[Round \"-\"]\n[White \"testg123\"]\n[Black \"maddogrulez\"]\n[Result \"1-0\"]\n[CurrentPosition \"r2qkbnr/p4Qpp/2p5/4p3/2B3P1/8/PPPP1PP1/RNB1K2R b KQkq - 0 9\"]\n[Timezone \"UTC\"]\n[ECO \"C50\"]\n[ECOUrl \"https://www.chess.com/openings/Italian-Game\"]\n[UTCDate \"2026.09.10\"]\n[UTCTime \"13:00:58\"]\n[WhiteElo \"557\"]\n[BlackElo \"523\"]\n[TimeControl \"60\"]\n[Termination \"testg123 won by checkmate\"]\n[StartTime \"13:00:58\"]\n[EndDate \"2026.09.10\"]\n[EndTime \"13:01:37\"]\n[Link \"https://www.chess.com/game/live/174271317174\"]\n\n1. e4 {[%clk 0:00:59.3]} 1... e5 {[%clk 0:00:59.1]} 2. Nf3 {[%clk 0:00:58.3]} 2... Nc6 {[%clk 0:00:58.8]} 3. Bc4 {[%clk 0:00:57.7]} 3... d5 {[%clk 0:00:53.4]} 4. exd5 {[%clk 0:00:56]} 4... Bg4 {[%clk 0:00:51.3]} 5. h3 {[%clk 0:00:53.7]} 5... Nd4 {[%clk 0:00:48.4]} 6. hxg4 {[%clk 0:00:50.5]} 6... Nxf3+ {[%clk 0:00:47.5]} 7. Qxf3 {[%clk 0:00:48.4]} 7... c6 {[%clk 0:00:45.2]} 8. dxc6 {[%clk 0:00:46.5]} 8... bxc6 {[%clk 0:00:44]} 9. Qxf7# {[%clk 0:00:44.6]} 1-0\n",
+    "evals": [
+      37,
+      -36,
+      32,
+      -21,
+      17,
+      -29,
+      122,
+      -108,
+      601,
+      -81,
+      556,
+      -560,
+      617,
+      -613,
+      765,
+      -780,
+      10000
+    ],
+    "end_time": 1789045297,
+    "time_control": "60",
+    "clocks": [
+      59.3,
+      59.1,
+      58.3,
+      58.8,
+      57.7,
+      53.4,
+      56.0,
+      51.3,
+      53.7,
+      48.4,
+      50.5,
+      47.5,
+      48.4,
+      45.2,
+      46.5,
+      44.0,
+      44.6
+    ],
+    "material_after_10": 31,
+    "development_move": 0,
+    "early_mate": false
   }
 }
