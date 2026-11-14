@@ -59756,5 +59756,51 @@
     "material_after_10": 30,
     "development_move": 0,
     "early_mate": false
+  },
+  "https://www.chess.com/game/live/187147066812": {
+    "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.11.13\"]\n[Round \"-\"]\n[White \"testg123\"]\n[Black \"greeben1\"]\n[Result \"1-0\"]\n[CurrentPosition \"rnbk1b1r/pp1n1Npp/5p2/2p1p3/2B1P3/2N5/PPP2PPP/R1B1K2R b KQ - 1 9\"]\n[Timezone \"UTC\"]\n[ECO \"C41\"]\n[ECOUrl \"https://www.chess.com/openings/Philidor-Defense-Nimzowitsch-Variation-4.Nc3\"]\n[UTCDate \"2026.11.13\"]\n[UTCTime \"19:25:57\"]\n[WhiteElo \"812\"]\n[BlackElo \"232\"]\n[TimeControl \"900+10\"]\n[Termination \"testg123 won by resignation\"]\n[StartTime \"19:25:57\"]\n[EndDate \"2026.11.13\"]\n[EndTime \"19:30:47\"]\n[Link \"https://www.chess.com/game/live/187147066812\"]\n\n1. e4 {[%clk 0:15:10]} 1... e5 {[%clk 0:15:10]} 2. Nf3 {[%clk 0:14:47.2]} 2... Nf6 {[%clk 0:15:17.8]} 3. Nc3 {[%clk 0:14:28.8]} 3... d6 {[%clk 0:15:26.6]} 4. d4 {[%clk 0:13:44.7]} 4... c5 {[%clk 0:15:30.7]} 5. dxe5 {[%clk 0:13:49.1]} 5... dxe5 {[%clk 0:15:38.5]} 6. Qxd8+ {[%clk 0:13:57.4]} 6... Kxd8 {[%clk 0:15:47.1]} 7. Bc4 {[%clk 0:13:22.7]} 7... Nfd7 {[%clk 0:15:48.1]} 8. Ng5 {[%clk 0:13:19.6]} 8... f6 {[%clk 0:15:56.5]} 9. Nf7+ {[%clk 0:13:28.2]} 1-0\n",
+    "evals": [
+      37,
+      -37,
+      36,
+      -34,
+      42,
+      -26,
+      52,
+      -50,
+      334,
+      -328,
+      356,
+      -342,
+      342,
+      -269,
+      358,
+      -354,
+      448
+    ],
+    "end_time": 1794598247,
+    "time_control": "900+10",
+    "clocks": [
+      910.0,
+      910.0,
+      887.2,
+      917.8,
+      868.8,
+      926.6,
+      824.7,
+      930.7,
+      829.1,
+      938.5,
+      837.4,
+      947.1,
+      802.7,
+      948.1,
+      799.6,
+      956.5,
+      808.2
+    ],
+    "material_after_10": 30,
+    "development_move": 0,
+    "early_mate": false
   }
 }
